@@ -1,7 +1,9 @@
-import { join } from 'path';
+import { defineConfig } from 'umi';
 
-export default {
-  base: '/test-gh-pages/',
-  publicPath: '/test-gh-pages/',
-  plugins: ['umi-plugin-gh-pages'],
-};
+export default defineConfig({
+  nodeModulesTransform: {
+    type: 'none',
+  },
+  routes: [{ path: '/', component: '@/pages/index' }],
+  fastRefresh: {},
+});
